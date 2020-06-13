@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Sender.py'],
-             pathex=['C:\\Users\\ThinkPad\\PycharmProjects\\AutomatedMessageSender'],
+             pathex=['C:\\Users\\ThinkPad\\Desktop\\Automated_message_sender'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -19,15 +19,19 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
-          a.binaries,
-          a.zipfiles,
-          a.datas,
           [],
+          exclude_binaries=True,
           name='Sender',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          upx_exclude=[],
-          runtime_tmpdir=None,
           console=True )
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=False,
+               upx=True,
+               upx_exclude=[],
+               name='Sender')

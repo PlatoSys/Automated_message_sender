@@ -8,7 +8,7 @@ phone_number = input("input phone number:  ")
 send_message = input("input text:  ")
 count = int(input("input number of sent messages:  "))
 
-driver = wd.Chrome(executable_path='C:/Users/ThinkPad/PycharmProjects/AutomatedMessageSender/Driver/chromedriver')
+driver = wd.Chrome(executable_path='Driver/chromedriver')
 driver.maximize_window()
 
 driver.get('http://www.magtifun.ge/')
